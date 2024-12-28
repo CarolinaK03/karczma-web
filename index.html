@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <script defer src="app.js"></script>
+    <style>
+
+        .site{
+            min-height: 100dvh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        body{
+            margin: 0;
+            font-family: 'Bodoni Moda SC' , sans-serif;
+            color:antiquewhite;
+            background-color: black;
+        } 
+
+        section{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 300px;
+            width: 100%;
+        }
+
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.6s;
+            padding: 40px 7px;
+            z-index: 1000000;
+        }
+        header .logo{
+            position:relative;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing:2px;
+            transition: 0.6s;
+            padding: 10px;
+        }
+
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        header ul li{
+            position:relative;
+            list-style:none;
+        }
+        header ul li button{
+            position: relative;
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3c151500;
+            letter-spacing: 2px;
+            font-weight: 500px;
+            font-family: "Merriweather", serif;
+            transition: 0.6s;
+            border: none; 
+        }
+        header ul li button:hover {
+            font-size: 120%;
+        }
+        header.sticky{
+            padding: 5px 7px;
+            background: #ffffff;
+            opacity: 0.7;
+        }
+        header.sticky ul li button{
+            color: #360101;
+        }
+        header.sticky .logo{
+            color: #360101;
+        }
+        .site_main .pink ul{
+            display: flex;           /* Use flexbox to align items horizontally */
+            flex-direction: row-reverse; /* Align items from right to left */
+            list-style-type: none;   /* Remove default bullet points */
+            padding: 0;              /* Remove default padding */
+            margin: 0;     
+        }
+        .container{
+            margin-top: 70px;
+        }
+
+        .container ul {
+            display: flex;
+            gap: 150px; /* Optional: Adds space between buttons */
+            justify-content: space-between;
+            width: 100%;
+            height:100%;
+            max-width: 300%;
+            box-sizing:border-box;
+            padding: auto;
+        }
+
+        .site_main .pink ul li button {
+            flex: 1;
+            padding: 10px 10px; /* Adds padding inside the buttons */
+            background-size: cover; /* Cover ensures the image fills the button */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: center; 
+            color: white; /* Button text color */
+            border: none; /* Removes default border */
+            cursor: pointer; /* Changes the cursor to a pointer on hover */
+            transition: background-color 0.3s; /* Adds a transition effect */
+            width: 300px;  /* Set the width to a fixed size */
+            height: 300px;  /* Set the height to a fixed size */
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+        
+        button[type="pizza-button"] {
+            background-image: url('pizza2.jpg');           
+        }
+        button[type="menu-button"] {
+            background-image: url('zurek.webp');             
+        }
+        button[type="event-button"] {
+            background-image: url('iStock-497277304.jpg');             
+        }
+
+        .site_main .pink ul li button:hover {
+            background-color: #5a0202; /* Changes the button color on hover */
+        }
+
+        .banner{
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            animation: slideshow 30s infinite;
+        }
+        @keyframes slideshow {
+            20%{
+                background-image: url('iStock-157615296.jpg');
+                background-position: left center;
+            }
+            40% {
+                background-image: url('iStock-490267007.jpg');
+                background-position: right center;
+            }
+            60% {
+                background-image: url('stockpizza1.jpg');
+                background-position: left center;
+            }
+            80% {
+                background-image: url('iStock-1398844339.jpg');
+                background-position: left center;
+            }
+            100% {
+                background-image: url('iStock-1349016710.jpg');
+                background-position: right center;
+            }
+        }
+        
+        .pink {
+            background: #290000;
+            height: 750px;
+            width: 100%;
+            
+        }
+        
+        .orange {
+            background: orange;
+            height: 600px;
+            width: 100%
+        }
+        
+        .green {
+            background: green;
+            height: 400px;
+            width: 100%
+        }
+        
+        .black {
+            background: black;
+            height: 500px;
+            width: 100%
+        }
+
+        .wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(118% + 1.3px);
+            height: 205px;
+        }   
+
+        .wave {
+            fill: #000000;
+        }
+
+        .custom-shape-divider-top-1723683528 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-top-1723683528 svg {
+            position: relative;
+            display: block;
+            width: calc(143% + 1.3px);
+            height: 145px;
+        }
+
+        .custom-shape-divider-top-1723683528 .shape-fill {
+            fill: #0000FF;
+        }
+
+        .overlay {
+            width: 100%;
+            background-repeat: no repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url('./blurry-gradient-haikei.svg');
+        }
+        .custom-shape-divider-bottom-1724787742 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .custom-shape-divider-bottom-1724787742 svg {
+            position: relative;
+            display: block;
+            width: calc(120% + 1.3px);
+            height: 93px;
+        }
+
+        .custom-shape-divider-bottom-1724787742 .shape-fill {
+            fill: #290000;
+        }
+        .menu-heading,
+        .pizza-heading,
+        .event-heading {
+            font-family: 'Bodoni Moda SC' , sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 40px; /* Adjusts the size */
+            color: #ffffff; /* Sets the text color */
+            margin: 0; /* Removes any default margin */
+            padding: 0; /* Removes any default padding */
+            z-index: 2;
+            transition: font-size 0.8s ease;
+        }
+        button[type="menu-button"]:hover .menu-heading {
+            font-size: 50px; /* Enlarged font size on hover */
+        }
+
+        button[type="event-button"]:hover .event-heading {
+            font-size: 50px; /* Enlarged font size on hover */
+        }
+
+        button[type="pizza-button"]:hover .pizza-heading {
+            font-size: 50px; /* Enlarged font size on hover */
+        }
+
+        .site_main .pink ul li button {
+            position: relative;
+            flex: 1;
+            /*padding: 0px 0px;*/
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 350px;
+            height: 350px;
+            box-sizing: border-box;
+            overflow: hidden; /* Ensures the overlay stays within the button */
+        }
+
+        .site_main .pink ul li button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(54, 1, 1, 0.4); /* Dark overlay */
+            z-index: 1;
+            transition: background-color 0.3s;
+        }
+        .site_main .pink ul li button:hover::before {
+    background-color: rgba(54, 1, 1, 0.2) /* Removes dark overlay on hover */
+}
+
+        .site_main .pink ul li button span {
+            position: relative;
+            z-index: 2;
+        }
+
+        button[type="menu-button"],
+        button[type="pizza-button"],
+        button[type="event-button"] {
+            position: relative;
+            overflow: hidden;
+             /* Ensures pseudo-element stays within button bounds */
+        }
+        
+
+        button[type="menu-button"] .overlay-image,
+        button[type="pizza-button"] .overlay-image,
+        button[type="event-button"] .overlay-image,
+        button[type="menu-button"] .overlay-image2,
+        button[type="pizza-button"] .overlay-image2,
+        button[type="event-button"] .overlay-image2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.8s ease;
+            z-index: 1;
+        }
+
+        /* Ensure the overlay-image2 is initially hidden */
+        button[type="menu-button"] .overlay-image2,
+        button[type="pizza-button"] .overlay-image2,
+        button[type="event-button"] .overlay-image2 {
+            opacity: 0;
+        }
+
+        /* Ensure the overlay-image is initially visible */
+        button[type="menu-button"] .overlay-image,
+        button[type="pizza-button"] .overlay-image,
+        button[type="event-button"] .overlay-image {
+            opacity: 1;
+        }
+
+        /* Hover styles */
+        button[type="menu-button"]:hover .overlay-image,
+        button[type="pizza-button"]:hover .overlay-image,
+        button[type="event-button"]:hover .overlay-image {
+            opacity: 0; /* Fade out on hover */
+        }
+
+        button[type="menu-button"]:hover .overlay-image2,
+        button[type="pizza-button"]:hover .overlay-image2,
+        button[type="event-button"]:hover .overlay-image2 {
+            opacity: 1; /* Fade in on hover */
+        }
+
+        .Welcome {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            max-width: 800px; /* Adjusts the width to fit the content */
+            margin-top: 10px;
+            
+        }
+        .Welcome2 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            max-width: 800px; /* Adjusts the width to fit the content */
+            margin-top: 10px;
+        }
+
+        .Welcome h1 {
+            font-size: 2.2em;
+            color: #ffffff; /* Change the color as needed */
+            margin-bottom: 10px;
+            margin-top: 0px;
+        }
+
+        .Welcome2 h3 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-align: center;
+            font-size: 1.5em;
+            width: 600px;
+            color: #ffffff; /* Change the color as needed */
+        }
+        .Welcome2 .Hours {
+            margin-top: 0px;
+            text-align: center;
+            font-size: 1.5em;
+            width: 600px;
+            color: #ffffff; /* Change the color as needed */
+        }
+
+        .one{
+            margin-top: 40px;
+            align-items: center;
+            border: none;
+            height: 4px;
+            background-color: #ffffff;
+            width: 50%;
+            margin-bottom: 1px;
+        }
+        .two{
+            width: 30%;
+            height: 30px;
+            margin-top: 10;
+        }
+        .pink-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 1;
+        }
+        .container{
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateY(70%);
+            transition: all 1.2s;
+            margin-top: 90px ;
+        }
+        .show{
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+        .custom-shape-divider-top-1725353607 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 10;
+        }
+
+        .custom-shape-divider-top-1725353607 svg {
+            position: relative;
+            display: block;
+            width: calc(104% + 1.3px);
+            height: 59px;
+            transform: rotateY(180deg);
+            z-index: 10;
+        }
+
+        .custom-shape-divider-top-1725353607 .shape-fill {
+            fill: #290000;
+        }
+        
+        .blue {
+            width: 100%;
+            height: 1000px;
+            position: relative;
+            overflow: hidden; /* Ensure content doesn't overflow the section */
+            display: flex;
+            flex-direction: row; /* Align children horizontally */
+            justify-content: space-between; /* Distribute space between children */
+            align-items: flex-start; /* Align items to the start of the container */
+        }
+        .blue-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image covers the entire section */
+            z-index: -1; /* Place the image behind other content */
+        }
+        .onas-img-container{
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            position: relative;
+            width: 70%;
+            height: 100%; /* Ensure it takes the full height of the parent */
+        }
+        .onas-img-container2{
+            width:95vh;
+            height: 55vh;
+            position: relative;  
+            top: 3rem;     
+            left: 8vh;    
+        }
+        .black-box {
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow */
+            z-index: 5;
+            height: 38.4vh; /* Full viewport height */
+            background-color: #000000;
+            width: 60vh;
+            position: absolute; /* Positioning absolute within the container */
+            overflow: hidden;
+        }
+        .corner1{
+            color: #ffffff;
+        }
+        .KarczmaDom{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Or 'cover' depending on your needs */
+            z-index: 3;
+        }
+        .white-box {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+            height: 38vh; /* Full viewport height */
+            background-color: #ffffff;
+            width: 30vh;
+            position: absolute; /* Positioning absolute within the container */
+            z-index: 8;
+            right: 6rem;  
+            top: 7rem   
+        }
+        
+      
+        .slider-container{
+            padding: 1rem;
+        }
+        .slider-wrapper{
+            position: relative;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        .slider{
+            display: flex;
+            aspect-ratio: 6 / 6;
+            overflow-x: auto;
+            overflow-y: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+        }
+        .slider img{
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+        }
+        .slider-nav{
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom: 1.4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+        .slider-nav a{
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0.75;
+            transition: opacity ease 250ms;
+        }
+        .slider-nav a:hover{
+            opacity: 1;
+        }
+        
+        .onas-img-container2 .h1{
+            font-size: 10px;
+            top: 50px;
+            background-color: #0000FF;
+        }
+
+        .onas-container{
+            text-align: center;
+            font-size: 1.4em;
+            width: 60%;
+            background-color: #8e38f0;
+        }
+
+
+
+        .Facebook-Img {
+            width: 80px; /* Set the width of the Facebook image */
+            height: auto; /* Maintain aspect ratio */
+            transition: transform 0.3s; /* Optional: Smooth transition for hover effect */
+        }
+        .Facebook-Img:hover {
+        transform: scale(1.1); /* Optional: Enlarge image slightly on hover */
+        }
+        .Insta-Img {
+            width: 75px; /* Set the width of the Facebook image */
+            height: auto; /* Maintain aspect ratio */
+            transition: transform 0.3s; /* Optional: Smooth transition for hover effect */
+        }
+        .Insta-Img:hover {
+        transform: scale(1.1); /* Optional: Enlarge image slightly on hover */
+        }
+        .socials-box{
+            background-color: #0000FF;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .left-box{
+            width: 50%;
+            margin-top: 15vh;
+            background-color: #3897f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .right-box{
+            width: 50%;
+            margin-top: 15vh;
+            background-color: #8e38f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+    <div class="site">
+
+        <header>
+            <a href="#" class="logo">Karczma Smacku</a>
+            <ul>
+                <li><button type="MenuButton1">Menu</button></li>
+                <li><button type="AboutUsButton">O Nas</button></li>
+                <li><button type="ContactButton">Contact</button></li>
+                <li><button type="ReviewsButton">Reviews</button></li>
+            </ul>
+        </header>
+        <section class="banner">
+            <div class="custom-shape-divider-bottom-1724787742">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+        <script type="text/javascript">
+            window.addEventListener("scroll", function(){
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky", window.scrollY > 0);
+            })
+        </script>
+
+    <main class="site_main">
+        <section class="pink">
+            
+                <hr class="one">
+
+                <div class="Welcome">
+                    <h1>Zapraszamy na kulinarną przygodę</h1>
+                </div>
+
+                <img src="Untitled_Artwork 6.png" class="two">
+
+                <div class="Welcome2">
+                    <h3>Przez całe lato od wtorku do niedzieli</h3>
+                        <h3 class="Hours">13:00 - 20:00</h3>
+                </div>
+    
+                <div class="container">
+                    <ul>
+                        <li>
+                            <button type="event-button">
+                                <img src="—Pngtree—vintage retro black corner border_8623129.png" alt="Overlay" class="overlay-image">
+                                <img src="Untitled_Artwork 5.png" alt="Overlay2" class="overlay-image2">
+                                <span class="event-heading">Imprezy</span>
+                            </button>
+                        </li>
+
+                        <li>
+                            <button type="pizza-button">
+                                <img src="—Pngtree—vintage retro black corner border_8623129.png" alt="Overlay" class="overlay-image">
+                                <img src="Untitled_Artwork 5.png" alt="Overlay2" class="overlay-image2">
+                                <span class="pizza-heading">Pizza</span>
+                            </button>
+                        </li>
+
+                        <li>    
+                            <button type="menu-button">
+                                <img src="—Pngtree—vintage retro black corner border_8623129.png" alt="Overlay" class="overlay-image">
+                                <img src="Untitled_Artwork 5.png" alt="Overlay2" class="overlay-image2">
+                                <span class="menu-heading">Menu</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+        </section>
+        <script type="text/javascript">
+            window.addEventListener("scroll",function(){
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky", window.scrollY > 0)
+            })
+        </script>
+
+
+        <section class="black">
+            <h1>O nas
+                <p> here include a photo of karzma and maybe a photo of the location, then on the right add an info page </p>
+            </h1>
+            <div class="custom-shape-divider-top-1723683528">
+                
+            </div>
+        </section>
+
+        
+
+        <section class="blue">
+            <!--Aesthetics of the section-->
+            <div class="custom-shape-divider-top-1725353607">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <img src="aurapizza7.jpg" class="blue-bg">
+            <!----------------------------->
+
+            <!--O nas paragraph-->
+            <div class="left-box">
+
+                <div class="onas-container">
+                    <h1>O nas</h1>
+                    <p2>At [Restaurant Name], we believe that dining is more than just a meal—it's
+                        an experience to be savored. Founded with a passion for exceptional food and genuine hospitality, 
+                        our restaurant is dedicated to bringing you the freshest, locally-sourced ingredients crafted into mouthwatering dishes. 
+                        From our cozy, welcoming atmosphere to our friendly, attentive staff, every detail is designed with your enjoyment in mind. 
+                    </p2> 
+                </div>
+
+                <div class="onas-img-container">
+                    <div class="onas-img-container2">
+                            <div class="black-box">
+                                <img src="karczmadom.jpg" class="KarczmaDom">
+                            </div>
+                            <h1>Wałpusz 66A, Szczytno gmina, Polska</h1>
+                            <div class="white-box-hidden"></div>
+                            <div class="white-box">
+                                <div class="slider-container">
+                                    <div class="slider-wraper">
+                                            <div class="slider">
+                                                <img id="slide-1" src="slider1.jpg" alt="Image of a band playing in Karczma"> 
+                                                <img id="slide-2" src="slider3.jpg" alt="Image of Karczma Exterior">
+                                                <img id="slide-3" src="pizza2.jpg" alt="Image of Karczma's pizza">
+                                                <img id="slide-4" src="slider2.jpg" alt="Image of a band playing in Karczma">
+                                            </div>
+                                            
+                                            <div class="slider-nav">
+                                                <a href="slide-1"></a>
+                                                <a href="slide-2"></a>
+                                                <a href="slide-3"></a>
+                                                <a href="slide-4"></a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div> 
+                    <div class="socials-box">
+                        <h1>
+                        <a href="https://www.facebook.com/karczmasmaku/?locale=pl_PL" target="_blank">
+                            <img src="fbimg.png" class="Facebook-Img" />
+                        </a>
+                        <a href="https://www.instagram.com/karczma_smaku/" target="_blank">
+                            <img src="instaimg.webp" class="Insta-Img" />
+                        </a>
+                        </h1>
+                    </div>
+                </div>
+
+            </div>
+            <!------------------->
+            <div class="right-box">
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/karczma_smaku/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/karczma_smaku/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this profile on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/karczma_smaku/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">Karczma Smaku</a> (@<a href="https://www.instagram.com/karczma_smaku/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">karczma_smaku</a>) • Instagram photos and videos</p></div></blockquote>
+                <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+            
+ 
+        </section>
+        
+
+
+
+
+
+
+
+
+        <section class="orange">
+            <h1>Reviews
+                <p>here should be a variety of reviews with photos maybe implement something wher eon the left is the text reviews and its like a vertical carousel, on the right have the images </p>
+                <div class="wave">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+                <div class="overlay"></div>
+            </h1>
+        </section>
+    </div>
+
+        <section class="green">
+            <h1>lower info deck
+                <p>Enim alias, sed laboriosam a voluptate vel aspernatur ipsum asperiores vitae harum odio autem, cum, consequuntur quia recusandae dolores quis inventore eum. Recusandae sed laborum magni architecto dignissimos excepturi quam!</p>
+            </h1>
+        </section>
+    </div>
+    
+</body>
+ </html>
